@@ -76,6 +76,7 @@ jobs:
         run: |
           cmake --version
           ninja --version
+          chmod +x ./gradlew
           
           BUILD_TYPE="${{ inputs.build_type || 'debug' }}"
           ARCH="${{ inputs.target_arch || 'arm64' }}"
