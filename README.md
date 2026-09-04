@@ -1,203 +1,84 @@
 <div align="center">
-  <img src="qt/res/logo.png" height="100"/>
+  <h1>دليل (Dalil)</h1>
+  <h3>تطبيق الملاحة والخرائط غير المتصلة بالإنترنت المخصص لسوريا</h3>
+  <p><b>100% Offline Turn-by-Turn GPS Navigation App specifically tailored for Syria</b></p>
+  <p>مبني بالاعتماد على المحرك مفتوح المصدر لـ Organic Maps مع تخصيص كامل للبيئة السورية واللغة العربية</p>
 </div>
-<h1 align="center">Organic Maps</h1>
 
-**Organic Maps** is a privacy-first offline maps & GPS app for hiking, cycling, biking, and driving. Absolutely free. No ads. No tracking. Created and maintained by MapsWithMe (MAPS.ME) founders, developed with love by the open-source community. Powered by [OpenStreetMap](https://www.openstreetmap.org) data. Installed by [over 6 million users worldwide](https://organicmaps.app/news/2025-12-31/organic-maps-2025-year-in-review/).
+---
 
-[<img src="docs/badges/apple-appstore.png" alt="App Store" width="140">](https://apps.apple.com/app/organic-maps/id1567437057)
-[<img src="docs/badges/google-play.png" alt="Google Play" width="140">](https://play.google.com/store/apps/details?id=app.organicmaps)
-[<img src="docs/badges/huawei-appgallery.png" alt="AppGallery" width="140">](https://appgallery.huawei.com/#/app/C104325611)
-[<img src="docs/badges/obtainium.png" alt="Obtainium" width="140">](https://github.com/organicmaps/organicmaps/wiki/Installing-Organic-Maps-from-GitHub-using-Obtainium)
-[<img src="docs/badges/fdroid.png" alt="F-Droid" width="140">](https://f-droid.org/en/packages/app.organicmaps/)
-[<img src="docs/badges/accrescent.png" alt="Accrescent" width="140">](https://accrescent.app/app/app.organicmaps)
+## 🌟 نبذة عن المشروع (Overview)
 
-<p float="left">
-  <img src="android/app/src/fdroid/play/listings/en-US/graphics/phone-screenshots/1.jpg" width="400" />
-  <img src="android/app/src/fdroid/play/listings/en-US/graphics/phone-screenshots/2.jpg" width="400" />
-  <img src="android/app/src/fdroid/play/listings/en-US/graphics/phone-screenshots/3.jpg" width="400" />
-  <img src="android/app/src/fdroid/play/listings/en-US/graphics/phone-screenshots/4.jpg" width="400" />
-</p>
+**دليل (Dalil)** هو تطبيق خرائط وملاحة متقدم يعمل **100% دون الحاجة لأي اتصال بالإنترنت**، مصمم خصيصاً لتلبية احتياجات السائقين والمستخدمين في **سوريا**. تم بناء التطبيق كنسخة مخصصة من محرك **Organic Maps** فائق السرعة والموفر للبطارية، مع حزم خريطة سوريا كاملة بداخل التطبيق ومواءمة اللغة العربية بشكل أصيل في كافة وظائف البحث والتوجيه الصوتي.
 
-## Features
+---
 
-Organic Maps is the ultimate companion app for travellers, tourists, hikers, and cyclists:
+## 🚀 المميزات الرئيسية (Key Features)
 
-- Detailed offline maps with places that don't exist on other maps, thanks to [OpenStreetMap](https://openstreetmap.org)
-- Cycling routes, hiking trails, and walking paths
-- Contour lines, elevation profiles, peaks, and slopes
-- Turn-by-turn walking, cycling, and car navigation with voice guidance
-- Subway maps and public transport routes
-- Fast offline search on the map
-- Bookmarks and tracks import and export in KML, KMZ, GPX, GeoJSON formats
-- Dark Mode to protect your eyes
-- Countries and regions don't take a lot of space
-- Wikipedia articles for places of interest
-- Free and open-source
+1. **جاهز للعمل فور التثبيت (Zero Initial Download):**
+   - خريطة سوريا الكاملة (`Syria.mwm`) مدمجة مسبقاً داخل التطبيق بحجم ~98 ميغابايت.
+   - لا يتطلب التطبيق تحميل أي بيانات إضافية عند فتحه لأول مرة؛ يفتح فوراً على خريطة سوريا دون الحاجة لشبكة واي فاي أو بيانات هاتف.
 
-## Why Organic?
+2. **عربي أصيل (Arabic-First Experience):**
+   - **أولوية الأسماء العربية:** تظهر جميع أسماء المدن والشوارع والمعالم باللغة العربية حصراً وبشكل افتراضي حتى لو كانت لغة الهاتف بالإنجليزية.
+   - **خطوط عربية واضحة ومحسنة:** تفعيل خط عربي أنيق وواضح (Noto Naskh Arabic) يدعم المحاذاة والتشبيك الصحيح لسهولة القراءة أثناء القيادة.
+   - **واجهة مستخدم متناسقة من اليمين لليسار (RTL):** مؤشرات التوجيه والمسافات والبطاقات مصممة للمستخدم العربي.
 
-Organic Maps is pure and organic, made with love:
+3. **محرك بحث عربي ذكي (Normalized Arabic Search):**
+   - تطبيع تلقائي للهمزات (`أ` / `إ` / `آ` / `ٱ` $\rightarrow$ `ا`).
+   - توحيد التاء المربوطة والهاء (`ة` $\leftrightarrow$ `ه`).
+   - توحيد الياء والألف المقصورة (`ى` $\leftrightarrow$ `ي`).
+   - إزالة علامات التشكيل تلقائياً أثناء البحث (الفتحة، الضمة، الكسرة، الشدة، التنوين).
+   - **معالجة ذكية لأداة التعريف (الـ):** البحث عن "مزة" يجد "المزة" فوراً، والبحث عن "المزة" يجد "مزة".
 
-- Respects your privacy
-- Saves your battery
-- No unexpected mobile data charges
-- Offline and fast
-- Open-source alternative to Google Maps, Apple Maps, and MAPS.ME
+4. **توجيه صوتي للملاحة انعطافاً بانعطاف (Turn-by-Turn Voice Navigation):**
+   - توجيه صوتي كامل باللغة العربية الفصحى يقرأ أسماء الشوارع والاتجاهات ديناميكياً بدقة وسلاسة (عبر محرك Android TTS).
+   - التحديد التلقائي للصوت العربي عند توفره في النظام دون الحاجة لإعداده يدوياً.
 
-Organic Maps is free from trackers and other bad stuff:
+5. **عرض افتراضي مخصص لسوريا (Syria-Centered View):**
+   - عند فتح التطبيق للمرة الأولى قبل تحديد موقع GPS، يتم تركيز الكاميرا والحدود على سوريا ومدينة دمشق بدلاً من إظهار كامل الكرة الأرضية.
 
-- No ads
-- No tracking
-- No data collection
-- No phoning home
-- No annoying registration
-- No mandatory tutorials
-- No noisy email spam
-- No push notifications
-- No crapware
-- ~~No pesticides~~ Purely organic!
+6. **تحديثات الخرائط داخل التطبيق (In-App Map Updates):**
+   - إمكانية التحقق وتنزيل التحديثات الشهرية لملف خريطة سوريا فقط عند توفر الإنترنت دون الحاجة لإعادة تثبيت التطبيق بالكامل.
 
-The Android application is verified by the <a href="https://reports.exodus-privacy.eu.org/en/reports/app.organicmaps/latest/">Exodus Privacy Project:
-<img src="docs/privacy/exodus.png" width="400"></a>
+---
 
-The iOS application is verified by <a href="https://ios.trackercontrol.org/analysis/app.organicmaps">TrackerControl for iOS:
-<img src="docs/privacy/trackercontrol-ios.png" width="400"></a>
+## 🛠️ البنية التقنية (Technical Architecture)
 
-<br/>
+- **C++20 Core:** المحرك الأساسي عالي الأداء المأخوذ من Organic Maps لمعالجة وتحليل ملفات `.mwm`، وحساب مسارات الملاحة دون استهلاك البيانات، وتقديم الرسوميات عبر Drape (OpenGL / Vulkan).
+- **Android Native (Kotlin & Java):** طبقة واجهة المستخدم ونظام إدارة الصوت ومطابقة الحزم.
+- **Data Packaging:** حزم `Syria.mwm` و `World.mwm` و `WorldCoasts.mwm` في مسار `android/sdk/maps/world/src/main/assets/`.
 
-Organic Maps doesn't request excessive permissions to spy on you:
+---
 
-<p float="left">
-  <img src="docs/privacy/om.jpg" width="400">
-  <img src="docs/privacy/mm.jpg" width="400">
-</p>
+## 📦 التجميع والبناء عبر GitHub Actions (Cloud CI/CD)
 
-At Organic Maps, we believe that privacy is a fundamental human right:
+يحتوي المستودع على سير عمل مؤتمت في مسار [`.github/workflows/dalil-build-apk.yml`](.github/workflows/dalil-build-apk.yml) لبناء ملفات APK جاهزة للتثبيت فوراً:
 
-- Organic Maps is an indie community-driven open-source project
-- We protect your privacy from Big Tech's prying eyes
-- Stay safe no matter where you are
+1. ارفع الكود إلى مستودع GitHub الخاص بك.
+2. توجه إلى تبويب **Actions** في GitHub.
+3. اختر سير العمل **Dalil Android Build & Release APK**.
+4. اضغط على **Run workflow**، واختر نوع البناء (`debug` أو `release`) والمعمارية (`arm64` للأجهزة الحديثة أو `arm32`).
+5. بعد انتهاء البناء (يستغرق عادةً دقائق بفضل كاش `ccache`)، حمّل ملف الـ APK المرفوع من قسم **Artifacts** وثبّته مباشرة على جهازك!
 
-Reject surveillance - embrace your freedom.
+---
 
-[**Give Organic Maps a try!**](#install)
+## 💻 البناء المحلي (Local Build)
 
-## Who is paying for the development?
+إذا كنت ترغب بالبناء محلياً على جهازك، يلزم توفر:
+- Android Studio مع Android SDK (API 34/35) و Android NDK (r25c+).
+- CMake 3.22+ و Ninja.
+- Java 17 (JDK 17).
 
-The app is free for everyone, so we rely on your donations. Please donate at [organicmaps.app/donate](https://organicmaps.app/donate/) to support the project!
+قم بتنفيذ الأمر التالي داخل مجلد `android`:
+```bash
+cd android
+./gradlew -Parm64 assembleWebDebug
+```
+سيتم توليد ملف APK في المسار:
+`android/app/build/outputs/apk/web/debug/Dalil-WebDebug.apk`
 
-Beloved institutional sponsors below have provided targeted grants to cover some infrastructure costs and fund development of new selected features:
+---
 
-<table>
-  <tr>
-    <td>
-      <a href="https://nlnet.nl/"><img src="docs/sponsors/nlnet.svg" alt="The NLnet Foundation" width="200px"></a>
-    </td>
-    <td>
-      <a href="https://github.com/organicmaps/organicmaps/milestone/7">The Search & Fonts improvement project</a> has been <a href="https://nlnet.nl/project/OrganicMaps/">funded</a> through NGI0 Entrust Fund. <a href="https://nlnet.nl/entrust/">NGI0 Entrust Fund</a> is established by the <a href="https://nlnet.nl/">NLnet Foundation</a> with financial support from the European Commission's <a href="https://www.ngi.eu/">Next Generation Internet programme</a>, under the aegis of DG Communications Networks, Content and Technology under grant agreement No 101069594.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://summerofcode.withgoogle.com/"><img src="docs/sponsors/gsoc.svg" alt="Google Summer of Code" width="200px"></a>
-    </td>
-    <td>
-      <a href="https://summerofcode.withgoogle.com/">Google</a> backed 5 student's projects in the Google Summer of Code program during <a href="https://summerofcode.withgoogle.com/programs/2022/organizations/organic-maps">2022</a> and <a href="https://summerofcode.withgoogle.com/programs/2023/organizations/organic-maps">2023</a> programs. Noteworthy projects included Android Auto and Wikipedia Dump Extractor.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://www.mythic-beasts.com/"><img src="docs/sponsors/mythic-beasts.png" alt="Mythic Beasts" width="200px"></a>
-    </td>
-    <td>
-      <a href="https://www.mythic-beasts.com/">Mythic Beasts</a> ISP <a href="https://www.mythic-beasts.com/blog/2021/10/06/improving-the-world-bit-by-expensive-bit/">provides us</a> two virtual servers with 400 TB/month of free bandwidth to host and serve maps downloads and updates.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://44plus.vn"><img src="docs/sponsors/44plus.svg" alt="44+ Technologies" width="200px"></a>
-    </td>
-    <td>
-      <a href="https://44plus.vn">44+ Technologies</a> is <a href="https://44plus.vn/organicmaps">providing us </a>with a free dedicated server worth around $12,000/year to serve maps across Vietnam & Southeast Asia.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://futo.org"><img src="docs/sponsors/futo.svg" alt="FUTO" width="200px"></a>
-    </td>
-    <td>
-      <a href="https://futo.org">FUTO</a> has <a href="https://www.youtube.com/watch?v=fJJclgBHrEw">awarded $1000 micro-grant</a> to Organic Maps in February 2023.
-    </td>
-  </tr>
-</table>
-
-The majority of all expenses have been funded by founders of the project since its inception. The project is far from achieving any sort of financial sustainability. The current level of voluntary donations falls significantly short of covering efforts needed to sustain the app. Any new developments of features are beyond the scope of possibility due to the absence of the necessary financial resources.
-
-Please consider [donating](https://organicmaps.app/donate/) if you want to see this open-source project thriving, not dying. There are [other ways how to support the project](#contributing). No coding skills required.
-
-## Governance
-
-See [docs/GOVERNANCE.md](docs/GOVERNANCE.md).
-
-<a name="contributing">
-
-## Contributing
-
-If you want to build the project, check [docs/INSTALL.md](docs/INSTALL.md). If you want to help the project,
-see [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md). You can [help in many ways](https://organicmaps.app/support-us/), the ability to code is not necessary.
-
-## Beta
-
-Please join our beta program, suggest your features, and report bugs:
-
-- [iOS Beta (TestFlight)](https://testflight.apple.com/join/lrKCl08I)
-- [Android Beta (Firebase)](https://appdistribution.firebase.dev/i/f3e918f9abc40c9c)
-
-## Feedback
-
-- **Rate us on the [App Store](https://apps.apple.com/app/organic-maps/id1567437057)
-and [Google Play](https://play.google.com/store/apps/details?id=app.organicmaps)**.
-- **Star us on Github**.
-- Report bugs or issues to [the issue tracker](https://github.com/organicmaps/organicmaps/issues).
-- Subscribe to our [Telegram Channel](https://t.me/OrganicMapsApp) or to the [[matrix] space](https://matrix.to/#/#organicmaps:matrix.org) for updates.
-- Join our [Telegram Group](https://t.me/OrganicMaps) to discuss with other users.
-  - Присоединяйтесь к нашей [русскоязычной группе в Telegram](https://t.me/OrganicMapsRu) для обратной связи и помощи.
-  - Diğer kullanıcılarla tartışmak için [Telegram Grubumuza](https://t.me/OrganicMapsTR) katılın.
-  - Rejoignez notre groupe [Telegram](https://t.me/OrganicMapsFR) pour obtenir de l'aide.
-- Contact us by [email](mailto:hello@organicmaps.app).
-- Follow our updates in social media:
-   - [Mastodon](https://fosstodon.org/@organicmaps)
-   - [Facebook](https://facebook.com/OrganicMaps)
-   - [X (Twitter)](https://x.com/OrganicMapsApp)
-   - [Instagram](https://instagram.com/organicmaps.app/)
-   - [Bluesky](https://bsky.app/profile/organicmaps.bsky.social)
-   - [Threads](https://www.threads.net/@organicmaps)
-   - [Reddit](https://www.reddit.com/r/organicmaps/)
-   - [LinkedIn](https://www.linkedin.com/company/organic-maps/)
-   - [TikTok](https://www.tiktok.com/@organicmaps)
-
-The Organic Maps community abides by the CNCF [code of conduct](https://github.com/organicmaps/organicmaps/blob/master/docs/CODE_OF_CONDUCT.md).
-
-## License and Copyrights
-
-The code is Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE), [NOTICE](NOTICE),
-[data/copyright.html](http://htmlpreview.github.io/?https://github.com/organicmaps/organicmaps/blob/master/data/copyright.html) and [.reuse/dep5](https://github.com/organicmaps/organicmaps/blob/master/.reuse/dep5) for more information.
-
-Binary data files (including, but not limited to `.mwm` map files) are provided under a separate license.
-See [DATA_LICENSE.txt](https://github.com/organicmaps/organicmaps/blob/master/DATA_LICENSE.txt) for details.
-
-[![REUSE status](https://api.reuse.software/badge/github.com/organicmaps/organicmaps)](https://api.reuse.software/info/github.com/organicmaps/organicmaps)
-
-### Attribution for forks and derivative apps based on Organic Maps
-
-If you use Organic Maps binary data (e.g. maps), source code, or its user interface in your project, include a visible, human-readable mention of the “Organic Maps Project” and a clickable link to https://organicmaps.app.
-To respect the work of all project contributors and to comply with license attribution terms, this notice should appear in user-visible locations, such as the product’s “About” and “Main Menu” screens.
-
-### 🤝 White-label
-
-For inquiries about white-labeling or using our servers for your products, please contact us in advance at:
-
-**legal@organicmaps.app**
-
-Thank you!
+## 📄 الترخيص (License)
+مشروع Dalil (دليل) مرخص تحت رخصة **Apache 2.0** بالاستناد إلى Organic Maps وبيانات **OpenStreetMap** (ODbL).

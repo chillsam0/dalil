@@ -1,3 +1,9 @@
+Arabic /system/fonts/NotoNaskhArabic-Regular.ttf
+Arabic fonts/00_NotoNaskhArabic-Regular.ttf
+Arabic_Supplement fonts/00_NotoNaskhArabic-Regular.ttf
+Arabic_Extended-A fonts/00_NotoNaskhArabic-Regular.ttf
+Arabic_Presentation_Forms-A fonts/00_NotoNaskhArabic-Regular.ttf
+Arabic_Presentation_Forms-B fonts/00_NotoNaskhArabic-Regular.ttf
 Basic_Latin /system/fonts/Roboto-Medium.ttf
 Basic_Latin /usr/share/fonts/truetype/roboto/Roboto-Medium.ttf
 Basic_Latin fonts/07_roboto_medium.ttf

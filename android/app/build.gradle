@@ -66,7 +66,7 @@ android {
     println('Version: ' + versionName)
     println('VersionCode: ' + versionCode)
     applicationId rootProject.ext.appId
-    buildConfigField 'String', 'SUPPORT_MAIL', '"android@organicmaps.app"'
+    buildConfigField 'String', 'SUPPORT_MAIL', '"support@dalil.app"'
     // Should be customized in flavors.
     buildConfigField 'String', 'REVIEW_URL', '""'
     resourceConfigurations += [project.ext.supportedLocalizations]
@@ -85,15 +85,15 @@ android {
     google {
       dimension 'default'
       versionName = android.defaultConfig.versionName + '-Google'
-      buildConfigField 'String', 'SUPPORT_MAIL', '"googleplay@organicmaps.app"'
-      buildConfigField 'String', 'REVIEW_URL', '"market://details?id=app.organicmaps"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"support@dalil.app"'
+      buildConfigField 'String', 'REVIEW_URL', '"market://details?id=app.dalil.maps"'
     }
 
     web {
       dimension 'default'
       applicationIdSuffix '.web'
       versionName = android.defaultConfig.versionName + '-Web'
-      buildConfigField 'String', 'SUPPORT_MAIL', '"apk@organicmaps.app"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"support@dalil.app"'
     }
 
     fdroid {
@@ -226,9 +226,8 @@ dependencies {
   implementation project(':sdk:car')
   implementation project(':sdk:widgets:lanes')
   implementation project(':sdk:widgets:speedlimit')
-  // World maps
-  googleImplementation project(':sdk:maps:world')
-  huaweiImplementation project(':sdk:maps:world')
+  // World and bundled maps
+  implementation project(':sdk:maps:world')
 
   webImplementation project(':sdk:location:gms:google')
   googleImplementation project(':sdk:location:gms:google')

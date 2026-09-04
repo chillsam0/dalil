@@ -1,0 +1,100 @@
+name: Dalil Android Build & Release APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build Type'
+        required: true
+        default: 'debug'
+        type: choice
+        options:
+          - debug
+          - release
+      target_arch:
+        description: 'Target Architecture'
+        required: true
+        default: 'arm64'
+        type: choice
+        options:
+          - arm64
+          - arm32
+          - all
+  push:
+    branches:
+      - main
+
+env:
+  JAVA_HOME: /usr/lib/jvm/temurin-17-jdk-amd64
+
+jobs:
+  build-dalil-apk:
+    name: Build Dalil APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install build tools and dependencies
+        shell: bash
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ninja-build
+
+      - name: Checkout sources
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 200
+
+      - name: Parallel submodules checkout
+        shell: bash
+        run: git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
+
+      - name: Ensure offline map datasets are present
+        shell: bash
+        run: |
+          ASSETS_DIR="android/sdk/maps/world/src/main/assets"
+          mkdir -p "$ASSETS_DIR"
+          for map in World.mwm WorldCoasts.mwm Syria.mwm; do
+            TARGET="$ASSETS_DIR/$map"
+            if [ ! -f "$TARGET" ] || [ $(stat -c%s "$TARGET" 2>/dev/null || echo 0) -lt 5000000 ]; then
+              echo "Downloading $map for bundled packaging..."
+              curl -L --retry 5 --retry-delay 3 -o "$TARGET" "https://cdn.organicmaps.app/maps/260714/$map"
+            fi
+            echo "$map verified: $(ls -lh $TARGET)"
+          done
+
+      - name: Configure ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: dalil-android-${{ inputs.build_type || 'debug' }}
+          save: true
+
+      - name: Compile Dalil APK
+        shell: bash
+        working-directory: android
+        env:
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+        run: |
+          cmake --version
+          ninja --version
+          
+          BUILD_TYPE="${{ inputs.build_type || 'debug' }}"
+          ARCH="${{ inputs.target_arch || 'arm64' }}"
+          
+          ARCH_PARAM=""
+          if [ "$ARCH" != "all" ]; then
+            ARCH_PARAM="-P${ARCH}"
+          fi
+          
+          if [ "$BUILD_TYPE" = "release" ]; then
+            ./gradlew $ARCH_PARAM assembleWebRelease
+          else
+            ./gradlew $ARCH_PARAM assembleWebDebug
+          fi
+
+      - name: Upload Dalil APK Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Dalil-APK-${{ inputs.build_type || 'debug' }}
+          path: android/app/build/outputs/apk/**/*.apk
+          if-no-files-found: error
+          retention-days: 30
