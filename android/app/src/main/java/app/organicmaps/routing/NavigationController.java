@@ -146,7 +146,7 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
 
   private void updateVehicle(@NonNull RoutingInfo info)
   {
-    final String distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
+    final CharSequence distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
     mNextTurnDistance.setText(distText);
     mNextTurnImage.setImageResource(info.carDirection.getTurnRes(info.exitNum));
     // Dalil: TalkBack / accessibility - announce distance in current locale (Arabic supported).
@@ -164,7 +164,7 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
 
   private void updatePedestrian(@NonNull RoutingInfo info)
   {
-    final String distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
+    final CharSequence distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
     mNextTurnDistance.setText(distText);
     mNextTurnImage.setImageResource(info.pedestrianDirection.getTurnRes());
     mNextTurnImage.setContentDescription(distText);
