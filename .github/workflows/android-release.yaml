@@ -137,7 +137,28 @@ jobs:
 
       - name: Parallel submodules checkout
         shell: bash
-        run: git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
+        run: |
+          git submodule sync --recursive
+          git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
+          # Some downstream forks keep .gitmodules but miss gitlink entries in the index.
+          # In that case "git submodule update" is a no-op, so clone entries explicitly.
+          if [ -z "$(git submodule status --recursive)" ]; then
+            echo "No gitlink submodules found, cloning paths from .gitmodules..."
+            git config -f .gitmodules --get-regexp '^submodule\..*\.path$' | while read -r key path; do
+              module="${key#submodule.}"
+              module="${module%.path}"
+              url="$(git config -f .gitmodules --get "submodule.${module}.url")"
+              branch="$(git config -f .gitmodules --get "submodule.${module}.branch" || true)"
+              if [ ! -e "$path/.git" ]; then
+                mkdir -p "$(dirname "$path")"
+                if [ -n "$branch" ]; then
+                  git clone --depth 1 --branch "$branch" "$url" "$path"
+                else
+                  git clone --depth 1 "$url" "$path"
+                fi
+              fi
+            done
+          fi
 
       - name: Checkout screenshots
         uses: actions/checkout@v6
