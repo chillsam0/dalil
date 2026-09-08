@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Dalil modern ETA strip: taller for Arabic numerals, larger touch targets, RTL-aware. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="65sp"
+  android:layout_height="76dp"
   android:gravity="center_vertical"
   android:orientation="horizontal"
-  tools:background="#3000FF00"
-  tools:ignore="RtlSymmetry">
+  android:paddingTop="@dimen/margin_half"
+  android:paddingBottom="@dimen/margin_half">
 
   <Space
     android:layout_width="0dp"

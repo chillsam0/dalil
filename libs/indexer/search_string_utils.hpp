@@ -77,7 +77,15 @@ void SplitUniString(strings::UniString const & uniS, Fn && fn, Delims const & de
 template <class FnT>
 void ForEachNormalizedToken(std::string_view s, FnT && fn)
 {
-  SplitUniString(NormalizeAndSimplifyString(s), fn, Delimiters());
+  SplitUniString(NormalizeAndSimplifyString(s), [&](strings::UniString str)
+  {
+    if (str.size() >= 4 && str[0] == 0x0627 && str[1] == 0x0644)
+    {
+      strings::UniString stripped(str.begin() + 2, str.end());
+      fn(std::move(stripped));
+    }
+    fn(std::move(str));
+  }, Delimiters());
 }
 
 std::vector<strings::UniString> NormalizeAndTokenizeString(std::string_view s);

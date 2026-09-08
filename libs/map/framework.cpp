@@ -1143,7 +1143,12 @@ void Framework::LoadViewport()
   }
   else
   {
-    ShowAll();
+    // Default to Syria on first launch
+    m2::RectD const syriaRect(mercator::FromLatLon(32.3, 35.6), mercator::FromLatLon(37.3, 42.4));
+    if (m_drapeEngine != nullptr)
+      m_drapeEngine->SetModelViewAnyRect(m2::AnyRectD(syriaRect), false /* isAnim */, false /* useVisibleViewport */);
+    else
+      ShowAll();
   }
 }
 

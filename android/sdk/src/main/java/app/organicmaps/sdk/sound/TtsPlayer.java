@@ -176,6 +176,11 @@ public enum TtsPlayer
   {
     LanguageData res;
 
+    // Dalil: prioritize Arabic voice guidance
+    res = findSupportedLanguage(new Locale("ar"), langs);
+    if (res != null && res.downloaded)
+      return res;
+
     Locale defLocale = Locale.getDefault();
     if (defLocale != null)
     {
