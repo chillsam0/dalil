@@ -47,6 +47,10 @@ jobs:
         shell: bash
         run: git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
 
+      - name: Set up SDK
+        shell: bash
+        run: echo "sdk.dir=$ANDROID_SDK_ROOT" > android/local.properties
+
       - name: Ensure offline map datasets are present
         shell: bash
         run: |
@@ -56,7 +60,12 @@ jobs:
             TARGET="$ASSETS_DIR/$map"
             if [ ! -f "$TARGET" ] || [ $(stat -c%s "$TARGET" 2>/dev/null || echo 0) -lt 5000000 ]; then
               echo "Downloading $map for bundled packaging..."
-              curl -L --retry 5 --retry-delay 3 -o "$TARGET" "https://cdn.organicmaps.app/maps/260714/$map"
+              curl -L --fail --retry 5 --retry-delay 3 -o "$TARGET" "https://cdn.organicmaps.app/maps/260714/$map"
+            fi
+            size=$(stat -c%s "$TARGET")
+            if [ "$size" -lt 5000000 ]; then
+              echo "ERROR: $TARGET is only $size bytes, CDN version 260714 may be stale. Update the version in this workflow."
+              exit 1
             fi
             echo "$map verified: $(ls -lh $TARGET)"
           done
