@@ -146,8 +146,11 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
 
   private void updateVehicle(@NonNull RoutingInfo info)
   {
-    mNextTurnDistance.setText(Utils.formatDistance(mFrame.getContext(), info.distToTurn));
+    final String distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
+    mNextTurnDistance.setText(distText);
     mNextTurnImage.setImageResource(info.carDirection.getTurnRes(info.exitNum));
+    // Dalil: TalkBack / accessibility - announce distance in current locale (Arabic supported).
+    mNextTurnImage.setContentDescription(distText);
 
     final boolean showNextNextTurn = info.hasNextNextTurn();
     UiUtils.showIf(showNextNextTurn, mNextNextTurnFrame);
@@ -161,8 +164,10 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
 
   private void updatePedestrian(@NonNull RoutingInfo info)
   {
-    mNextTurnDistance.setText(Utils.formatDistance(mFrame.getContext(), info.distToTurn));
+    final String distText = Utils.formatDistance(mFrame.getContext(), info.distToTurn);
+    mNextTurnDistance.setText(distText);
     mNextTurnImage.setImageResource(info.pedestrianDirection.getTurnRes());
+    mNextTurnImage.setContentDescription(distText);
   }
 
   public void update(@Nullable RoutingInfo info)
@@ -186,8 +191,12 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
     // https://github.com/organicmaps/organicmaps/issues/3732
     UiUtils.visibleIf(hasStreet, mStreetFrame);
     if (!TextUtils.isEmpty(info.nextStreet))
+    {
       mNextStreet.setText(RoadShieldUtils.createStreetTextWithShields(info.nextStreet, info.nextStreetRoadShields,
                                                                       mNextStreet.getTextSize()));
+      // Dalil: accessibility - expose street name to TalkBack.
+      mNextStreet.setContentDescription(info.nextStreet);
+    }
     int margin = dimen(mFrame.getContext(), R.dimen.nav_frame_padding);
     if (hasStreet)
       margin += mStreetFrame.getHeight();

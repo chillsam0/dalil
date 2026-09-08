@@ -10,11 +10,17 @@
   tools:showIn="@layout/layout_nav">
   <FrameLayout
     android:id="@+id/street_frame"
-    android:layout_width="match_parent"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_half_plus"
+    android:layout_marginTop="@dimen/margin_half_plus"
+    android:layout_marginEnd="@dimen/margin_half_plus"
     android:elevation="@dimen/nav_elevation"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     android:clickable="true"
+    android:focusable="true"
     android:background="?cardBackground">
     <TextView
         android:id="@+id/street"
@@ -23,9 +29,15 @@
         android:layout_height="wrap_content"
         android:minHeight="@dimen/nav_street_height"
         android:layout_marginStart="@dimen/nav_street_left"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingBottom="@dimen/margin_half"
         android:maxLines="2"
+        android:ellipsize="end"
         android:layout_gravity="center_vertical"
         android:gravity="center"
+        android:textAlignment="center"
+        android:contentDescription="@string/navigation_current_street"
         tools:text="Sample street name.\nLong looooooooong!!!!"/>
   </FrameLayout>
 
@@ -35,8 +47,10 @@
     android:layout_height="wrap_content"
     app:layout_constraintTop_toBottomOf="@id/street_frame"
     app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="-40dp"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginStart="@dimen/margin_half_plus"
     android:clickable="true"
+    android:focusable="true"
     android:elevation="@dimen/nav_elevation">
     <LinearLayout
       android:id="@+id/nav_next_turn_frame"
@@ -44,6 +58,7 @@
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/margin_half"
       android:orientation="vertical"
+      android:padding="@dimen/margin_half"
       android:background="?navNextTurnFrame"
       android:elevation="@dimen/nav_elevation">
       <ImageView
@@ -54,6 +69,8 @@
           android:layout_marginTop="@dimen/nav_next_turn_top"
           android:layout_marginBottom="@dimen/nav_next_turn_space"
           android:layout_gravity="center_horizontal"
+          android:layoutDirection="ltr"
+          android:contentDescription="@string/navigation_next_turn"
           app:tint="?iconTint"
           tools:src="@drawable/ic_roundabout_exit_12"/>
 
@@ -65,6 +82,9 @@
         android:layout_marginBottom="@dimen/nav_next_turn_bottom"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="none"
         tools:text="9999 ft"/>
     </LinearLayout>
 
@@ -95,7 +115,7 @@
       android:id="@+id/lanes"
       android:layout_width="0dp"
       android:layout_height="68dp"
-      android:layout_marginEnd="@dimen/margin_half"
+      android:layout_marginEnd="@dimen/margin_half_plus"
       android:layout_marginTop="@dimen/margin_half"
       android:padding="@dimen/margin_half"
       android:visibility="gone"
@@ -112,9 +132,9 @@
   <app.organicmaps.sdk.widgets.speedlimit.SpeedLimitView
     android:id="@+id/nav_speed_limit"
     style="@style/MwmWidget.SpeedLimit"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:layout_margin="@dimen/margin_half"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:layout_margin="@dimen/margin_half_plus"
     app:layout_constraintEnd_toEndOf="@id/nav_next_turn_container"
     app:layout_constraintStart_toStartOf="@id/nav_next_turn_container"
     app:layout_constraintTop_toBottomOf="@id/nav_next_turn_container" />
