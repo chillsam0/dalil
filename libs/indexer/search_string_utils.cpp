@@ -131,6 +131,25 @@ UniString NormalizeAndSimplifyString(std::string_view s)
     case 0x2116:  // №
       c = '#';
       break;
+    // Arabic normalization
+    case 0x0622:  // Madda on Alif: آ
+    case 0x0623:  // Hamza on Alif: أ
+    case 0x0625:  // Hamza below Alif: إ
+    case 0x0671:  // Alif Wasla: ٱ
+      c = 0x0627;  // Bare Alif: ا
+      break;
+    case 0x0624:  // Hamza on Waw: ؤ
+      c = 0x0648;  // Waw: و
+      break;
+    case 0x0626:  // Hamza on Yaa/Nabira: ئ
+      c = 0x064A;  // Yaa: ي
+      break;
+    case 0x0629:  // Taa Marbuta: ة
+      c = 0x0647;  // Haa: ه
+      break;
+    case 0x0649:  // Alif Maksura: ى
+      c = 0x064A;  // Yaa: ي
+      break;
     // Remove emoji variation selectors, as categories.txt stores emoji without them.
     case 0xfe0e:  // VARIATION SELECTOR-15
     case 0xfe0f:  // VARIATION SELECTOR-16
@@ -143,12 +162,20 @@ UniString NormalizeAndSimplifyString(std::string_view s)
   NormalizeInplace(uniString);
   TransliterateHiraganaToKatakana(uniString);
 
-  // Remove accents that can appear after NFKD normalization.
+  // Remove accents that can appear after NFKD normalization and Arabic diacritics (tashkeel).
   uniString.erase_if([](UniChar const & c)
   {
     // ̀  COMBINING GRAVE ACCENT
     // ́  COMBINING ACUTE ACCENT
-    return (c == 0x0300 || c == 0x0301);
+    if (c == 0x0300 || c == 0x0301)
+      return true;
+    // Arabic Tashkeel (diacritics: Fathatan, Dammatan, Kasratan, Fatha, Damma, Kasra, Shadda, Sukun)
+    if (c >= 0x064B && c <= 0x0652)
+      return true;
+    // Dagger Alif (0x0670) and Tatweel/Kashida (0x0640)
+    if (c == 0x0670 || c == 0x0640)
+      return true;
+    return false;
   });
 
   // Replace sequence of spaces with single one.
@@ -220,7 +247,12 @@ bool TokenizeStringAndCheckIfLastTokenIsPrefix(std::string_view s, std::vector<U
   auto const uniString = NormalizeAndSimplifyString(s);
 
   Delimiters delims;
-  SplitUniString(uniString, base::MakeBackInsertFunctor(tokens), delims);
+  SplitUniString(uniString, [&](UniString str)
+  {
+    if (str.size() >= 4 && str[0] == 0x0627 && str[1] == 0x0644)
+      tokens.emplace_back(str.begin() + 2, str.end());
+    tokens.push_back(std::move(str));
+  }, delims);
   return !uniString.empty() && !delims(uniString.back());
 }
 

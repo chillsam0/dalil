@@ -103,18 +103,17 @@ bool IsNativeLang(feature::RegionData const & regionData, int8_t deviceLang)
 
 LangsBufferT MakeLanguagesPriorityList(int8_t deviceLang, bool preferDefault)
 {
-  LangsBufferT langPriority = {deviceLang};
+  int8_t const arCode = StringUtf8Multilang::GetLangIndex("ar");
+  LangsBufferT langPriority = {arCode};
+  if (deviceLang != arCode && deviceLang != StrUtf8::kUnsupportedLanguageCode)
+    langPriority.push_back(deviceLang);
   if (preferDefault)
     langPriority.push_back(StrUtf8::kDefaultCode);
-
-  /// @DebugNote
-  // Add ru lang for descriptions/rendering tests.
-  // langPriority.push_back(StrUtf8::GetLangIndex("ru"));
 
   if (auto const * similar = StrUtf8::GetSimilarLanguages(deviceLang))
   {
     for (int8_t l : *similar)
-      if (l != StrUtf8::kUnsupportedLanguageCode)
+      if (l != StrUtf8::kUnsupportedLanguageCode && l != arCode)
         langPriority.push_back(l);
   }
 

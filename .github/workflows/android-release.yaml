@@ -198,15 +198,15 @@ jobs:
         if: ${{ matrix.flavor == 'google' }}
         uses: actions/upload-artifact@v7
         with:
-          name: OrganicMaps-${{ needs.tag.outputs.code }}-google-release.aab
-          path: ./android/app/build/outputs/bundle/googleRelease/OrganicMaps-${{ needs.tag.outputs.code }}-google-release.aab
+          name: Dalil-${{ needs.tag.outputs.code }}-google-release.aab
+          path: ./android/app/build/outputs/bundle/googleRelease/Dalil-${{ needs.tag.outputs.code }}-google-release.aab
 
       - name: Upload Huawei aab to GitHub artifacts
         if: ${{ matrix.flavor == 'huawei' }}
         uses: actions/upload-artifact@v7
         with:
-          name: OrganicMaps-${{ needs.tag.outputs.code }}-huawei-release.aab
-          path: ./android/app/build/outputs/bundle/huaweiRelease/OrganicMaps-${{ needs.tag.outputs.code }}-huawei-release.aab
+          name: Dalil-${{ needs.tag.outputs.code }}-huawei-release.aab
+          path: ./android/app/build/outputs/bundle/huaweiRelease/Dalil-${{ needs.tag.outputs.code }}-huawei-release.aab
 
       - name: Upload to Google Play
         if: ${{ matrix.flavor == 'google' }}
@@ -224,14 +224,14 @@ jobs:
         if: ${{ matrix.flavor == 'web' }}
         shell: bash
         working-directory: android/app/build/outputs/apk/web/release
-        run: sha256sum OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk > OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
+        run: sha256sum Dalil-${{ needs.tag.outputs.code }}-web-release.apk > Dalil-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
 
       - name: Upload web release apk and its sha256sum to GitHub artifacts
         if: ${{ matrix.flavor == 'web' }}
         uses: actions/upload-artifact@v7
         with:
-          name: OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk
-          path: ./android/app/build/outputs/apk/web/release/OrganicMaps-${{ needs.tag.outputs.code }}-web-release.*
+          name: Dalil-${{ needs.tag.outputs.code }}-web-release.apk
+          path: ./android/app/build/outputs/apk/web/release/Dalil-${{ needs.tag.outputs.code }}-web-release.*
 
       - name: Prepare release notes
         if: ${{ matrix.flavor == 'web' }}
@@ -245,7 +245,7 @@ jobs:
             echo ""
             echo "sha256sum:"
             echo -e '\n```'
-            tr -d '\n' < ./android/app/build/outputs/apk/web/release/OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
+            tr -d '\n' < ./android/app/build/outputs/apk/web/release/Dalil-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
             echo -e '\n```'
           } > ${{ runner.temp }}/release-notes.txt
 
@@ -259,6 +259,6 @@ jobs:
           tag_name: ${{ needs.tag.outputs.tag }}
           discussion_category_name: 'Announcements'
           files: |
-            ./android/app/build/outputs/apk/web/release/OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk
-            ./android/app/build/outputs/apk/web/release/OrganicMaps-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
+            ./android/app/build/outputs/apk/web/release/Dalil-${{ needs.tag.outputs.code }}-web-release.apk
+            ./android/app/build/outputs/apk/web/release/Dalil-${{ needs.tag.outputs.code }}-web-release.apk.sha256sum
           fail_on_unmatched_files: true

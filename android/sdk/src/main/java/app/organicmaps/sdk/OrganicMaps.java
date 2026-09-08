@@ -25,7 +25,11 @@ import app.organicmaps.sdk.util.SharedPropertiesUtils;
 import app.organicmaps.sdk.util.StorageUtils;
 import app.organicmaps.sdk.util.log.Logger;
 import app.organicmaps.sdk.util.log.LogsManager;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public final class OrganicMaps implements DefaultLifecycleObserver
 {
@@ -179,6 +183,8 @@ public final class OrganicMaps implements DefaultLifecycleObserver
     // external storage is damaged or not available (read-only).
     createPlatformDirectories(writablePath, privatePath, tempPath);
 
+    unpackBundledSyriaMap(writablePath);
+
     nativeInitPlatform(mContext, apkPath, writablePath, privatePath, tempPath, mFlavor, BuildConfig.BUILD_TYPE,
                        /* isTablet */ false);
     Config.setStoragePath(writablePath);
@@ -186,6 +192,71 @@ public final class OrganicMaps implements DefaultLifecycleObserver
 
     mPlatformInitialized = true;
     Logger.i(TAG, "Platform initialized");
+  }
+
+  private void unpackBundledSyriaMap(@NonNull String writablePath)
+  {
+    try
+    {
+      String[] assets = mContext.getAssets().list("");
+      boolean hasSyriaInAssets = false;
+      if (assets != null)
+      {
+        for (String a : assets)
+        {
+          if ("Syria.mwm".equals(a))
+          {
+            hasSyriaInAssets = true;
+            break;
+          }
+        }
+      }
+      if (!hasSyriaInAssets)
+        return;
+
+      String versionDir = "260714";
+      try (InputStream is = mContext.getAssets().open("countries.json"))
+      {
+        byte[] buffer = new byte[512];
+        int read = is.read(buffer);
+        if (read > 0)
+        {
+          String header = new String(buffer, 0, read);
+          int vIdx = header.indexOf("\"v\":");
+          if (vIdx != -1)
+          {
+            int commaIdx = header.indexOf(",", vIdx);
+            if (commaIdx != -1)
+              versionDir = header.substring(vIdx + 4, commaIdx).replaceAll("[^0-9]", "");
+          }
+        }
+      }
+      catch (Exception ignored) {}
+
+      File targetDir = new File(writablePath, versionDir);
+      if (!targetDir.exists())
+        targetDir.mkdirs();
+
+      File targetFile = new File(targetDir, "Syria.mwm");
+      if (!targetFile.exists() || targetFile.length() == 0)
+      {
+        Logger.i(TAG, "Unpacking bundled Syria.mwm to " + targetFile.getAbsolutePath());
+        try (InputStream in = mContext.getAssets().open("Syria.mwm");
+             OutputStream out = new FileOutputStream(targetFile))
+        {
+          byte[] buf = new byte[65536];
+          int len;
+          while ((len = in.read(buf)) > 0)
+            out.write(buf, 0, len);
+          out.flush();
+        }
+        Logger.i(TAG, "Unpacking bundled Syria.mwm completed: " + targetFile.length() + " bytes");
+      }
+    }
+    catch (Exception e)
+    {
+      Logger.e(TAG, "Failed to unpack bundled Syria map: " + e.getMessage(), e);
+    }
   }
 
   private boolean initNativeFramework(@NonNull Runnable onComplete)

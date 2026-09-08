@@ -4,6 +4,8 @@
 .DS_Store
 /screenlog.0
 compile_commands.json
+*.mwm
+*.mwm.tmp
 
 # Styles and colors edited by the built-in designer (see qt/build_style)
 data/symbols/*/design/

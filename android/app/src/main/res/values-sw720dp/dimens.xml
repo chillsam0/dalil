@@ -1,8 +1,8 @@
 <resources>
-  <dimen name="nav_menu_content_height">64dp</dimen>
-  <dimen name="nav_street_height">56dp</dimen>
-  <dimen name="nav_street_left">152dp</dimen>
-  <dimen name="nav_next_turn_frame">132dp</dimen>
+  <dimen name="nav_menu_content_height">76dp</dimen>
+  <dimen name="nav_street_height">64dp</dimen>
+  <dimen name="nav_street_left">172dp</dimen>
+  <dimen name="nav_next_turn_frame">152dp</dimen>
   <dimen name="nav_next_turn_top">12dp</dimen>
   <dimen name="nav_next_turn_bottom">9dp</dimen>
   <dimen name="nav_next_turn_space">9dp</dimen>

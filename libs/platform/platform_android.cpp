@@ -68,7 +68,7 @@ std::unique_ptr<ModelReader> Platform::GetReader(std::string const & file, std::
       ASSERT(ext != ".kml" && ext != ".kmb" && ext != ".kmz", ("BookmarkManager is responsible for that"));
 
       if (ext == DATA_FILE_EXTENSION)
-        if (file.starts_with(WORLD_COASTS_FILE_NAME) || file.starts_with(WORLD_FILE_NAME))
+        if (file.starts_with(WORLD_COASTS_FILE_NAME) || file.starts_with(WORLD_FILE_NAME) || file.starts_with("Syria"))
           searchScope = "wsr";
         else
           searchScope = "w";

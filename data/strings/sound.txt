@@ -2,7 +2,7 @@
 
 [make_a_slight_right_turn]
 en = Keep right.
-ar = الزم اليمين.
+ar = خليك على اليمين.
 be = Трымайцеся правей.
 bg = Дръжте се вдясно.
 ca = Manteniu-vos a la dreta.
@@ -61,7 +61,7 @@ nl = Neem
 
 [make_a_right_turn]
 en = Turn right.
-ar = انعطف يميناً.
+ar = لف يمين.
 be = Павярніце направа.
 bg = Завийте надясно.
 ca = Gireu a la dreta.
@@ -116,7 +116,7 @@ nl = naar rechts afslaan
 
 [make_a_sharp_right_turn]
 en = Sharp right.
-ar = إلى أقصى اليمين.
+ar = لف يمين على الآخر.
 be = Рэзка павярніце направа.
 bg = Завийте рязко надясно.
 ca = Gireu fortament a la dreta.
@@ -170,7 +170,7 @@ nl = scherp naar rechts afslaan
 
 [enter_the_roundabout]
 en = Enter the roundabout.
-ar = ادخل الدوار.
+ar = فوت على الدوار.
 be = Павярніце на круг.
 bg = Влезте в кръговото движение.
 ca = Entreu a la rotonda.
@@ -233,7 +233,7 @@ nl = Rijd
 
 [leave_the_roundabout]
 en = Exit the roundabout.
-ar = اخرج من الدوار.
+ar = اطلع من الدوار.
 be = Збочце з круга.
 bg = Излезте от кръговото движение.
 ca = Sortiu de la rotonda.
@@ -296,7 +296,7 @@ nl = Verlaat
 
 [make_a_slight_left_turn]
 en = Keep left.
-ar = الزم اليسار.
+ar = خليك على اليسار.
 be = Трымайцеся лявей.
 bg = Дръжте се вляво.
 ca = Manteniu-vos a l'esquerra.
@@ -355,7 +355,7 @@ nl = Neem
 
 [make_a_left_turn]
 en = Turn left.
-ar = انعطف يساراً.
+ar = لف يسار.
 be = Павярніце налева.
 bg = Завийте наляво.
 ca = Gireu a l'esquerra.
@@ -410,7 +410,7 @@ nl = naar links afslaan
 
 [make_a_sharp_left_turn]
 en = Sharp left.
-ar = إلى أقصى اليسار.
+ar = لف يسار على الآخر.
 be = Рэзка павярніце налева.
 bg = Завийте рязко наляво.
 ca = Gireu fortament a l'esquerra.
@@ -464,7 +464,7 @@ nl = scherp naar links afslaan
 
 [make_a_u_turn]
 en = Make a u-turn.
-ar = إستدر للعودة.
+ar = لف وارجع.
 be = Развярніцеся.
 bg = Направете обратен завой.
 ca = Feu un canvi de sentit.
@@ -524,7 +524,7 @@ ja = 後ろ方向して
 
 [go_straight]
 en = Go straight.
-ar = إستمر إلى الأمام.
+ar = كمل دغري.
 be = Рухайцеся прама.
 bg = Продължете направо.
 ca = Seguiu tot recte.
@@ -573,7 +573,7 @@ yue = 直行。
 
 [exit]
 en = Exit.
-ar = خروج.
+ar = مخرج.
 be = З'езд.
 bg = Изход.
 ca = Sortida.
@@ -625,7 +625,7 @@ yue = 駛出。
 [onto]
 comment = Used in dist_direction_onto_street in position 3 unless take_exit_number is specified. For languages that don't have an "onto" word, (e.g. eu, ja, ko), the value should be the word NULL
 en = onto
-ar = إلى
+ar = على
 be = на
 bg = към
 ca = cap a
@@ -675,7 +675,7 @@ yue = 入
 [take_exit_number]
 comment = Used in dist_direction_onto_street instead of "Exit" when there's an exit number after. Replaces the "onto" string as well. (There is no take_exit_number_street since this string is only used when announcing street names anyway.)
 en = Take exit
-ar = خروج إلى
+ar = خود مخرج
 be = З'езд на
 bg = Вземете изхода
 ca = Agafeu la sortida
@@ -731,7 +731,7 @@ nl = Neem
 [route_recalculating]
 en = Recalculating the route
 af = Herbereken die roete
-ar = إعادة حساب المسار
+ar = عم نحسب طريق جديد
 az = Marşrutun yenidən hesablanması
 be = Пераразлік маршруту
 bg = Преизчисляване на маршрута
@@ -782,7 +782,7 @@ yue = 重新計算路線
 
 [destination]
 en = You’ll arrive.
-ar = سوف تصل.
+ar = قربت توصل.
 be = Вы прыбудзеце ў пункт прызначэння.
 bg = Ще стигнете местоназначението си.
 ca = Arribareu a la destinació.
@@ -832,7 +832,7 @@ yue = 就嚟到目的地。
 
 [you_have_reached_the_destination]
 en = You have arrived.
-ar = لقد وصلت.
+ar = وصلت.
 be = Вы прыбылі ў пункт прызначэння.
 bg = Пристигнахте в местоназначението си.
 ca = Heu arribat.
@@ -883,7 +883,7 @@ yue = 你已經到咗目的地。
 
 [in_50_meters]
 en = In fifty meters
-ar = بعد خمسين متراً
+ar = بعد خمسين متر
 be = Праз пяцьдзесят метраў
 bg = След петдесет метра
 ca = A cinquanta metres
@@ -933,7 +933,7 @@ yue = 喺五十米後
 
 [in_100_meters]
 en = In one hundred meters
-ar = بعد مئة متر
+ar = بعد مية متر
 be = Праз сто метраў
 bg = След сто метра
 ca = A cent metres
@@ -983,7 +983,7 @@ yue = 喺一百米後
 
 [in_200_meters]
 en = In two hundred meters
-ar = بعد مئتين متر
+ar = بعد ميتين متر
 be = Праз дзвесце метраў
 bg = След двеста метра
 ca = A dos-cents metres
@@ -1033,7 +1033,7 @@ yue = 喺兩百米後
 
 [in_250_meters]
 en = In two hundred and fifty meters
-ar = بعد مئتين وخمسين متراً
+ar = بعد ميتين وخمسين متر
 be = Праз дзвесце пяцьдзесят метраў
 bg = След двеста и петдесет метра
 ca = A dos-cents cinquanta metres
@@ -1083,7 +1083,7 @@ yue = 喺兩百五十米後
 
 [in_300_meters]
 en = In three hundred meters
-ar = بعد ثلاثمئة متر
+ar = بعد تلاتمية متر
 be = Праз трыста метраў
 bg = След триста метра
 ca = A tres-cents metres
@@ -1133,7 +1133,7 @@ yue = 喺三百米後
 
 [in_400_meters]
 en = In four hundred meters
-ar = بعد أربعمئة متر
+ar = بعد أربعمية متر
 be = Праз чатырыста метраў
 bg = След четиристотин метра
 ca = A quatre-cents metres
@@ -1183,7 +1183,7 @@ yue = 喺四百米後
 
 [in_500_meters]
 en = In five hundred meters
-ar = بعد خمسمئة متر
+ar = بعد خمسمية متر
 be = Праз пяцьсот метраў
 bg = След петстотин метра
 ca = A cinc-cents metres
@@ -1233,7 +1233,7 @@ yue = 喺五百米後
 
 [in_600_meters]
 en = In six hundred meters
-ar = بعد ستمئة متر
+ar = بعد ستمية متر
 be = Праз шэсцьсот метраў
 bg = След шестстотин метра
 ca = A sis-cents metres
@@ -1283,7 +1283,7 @@ yue = 喺六百米後
 
 [in_700_meters]
 en = In seven hundred meters
-ar = بعد سبعمئة متر
+ar = بعد سبعمية متر
 be = Праз сямсот метраў
 bg = След седемстотин метра
 ca = A set-cents metres
@@ -1333,7 +1333,7 @@ yue = 喺七百米後
 
 [in_750_meters]
 en = In seven hundred and fifty meters
-ar = بعد سبعمئة وخمسين مترًا
+ar = بعد سبعمية وخمسين متر
 be = Праз сямсот пяцьдзясят метраў
 bg = След седемстотин и петдесет метра
 ca = A set-cents cinquanta metres
@@ -1383,7 +1383,7 @@ yue = 喺七百五十米後
 
 [in_800_meters]
 en = In eight hundred meters
-ar = بعد ثمانمئة متر
+ar = بعد تمنمية متر
 be = Праз васямсот метраў
 bg = След осемстотин метра
 ca = A vuit-cents
@@ -1433,7 +1433,7 @@ yue = 喺八百米後
 
 [in_900_meters]
 en = In nine hundred meters
-ar = بعد تسعمئة متر
+ar = بعد تسعمية متر
 be = Праз дзевяцьсот метраў
 bg = След деветстотин метра
 ca = A nou-cents metres
@@ -1483,7 +1483,7 @@ yue = 喺九百米後
 
 [in_1_kilometer]
 en = In one kilometer
-ar = بعد كيلومتر واحد
+ar = بعد كيلومتر
 be = Праз кіламетр
 bg = След един километър
 ca = A un quilòmetre
@@ -1533,7 +1533,7 @@ yue = 喺一公里後
 
 [in_1_5_kilometers]
 en = In one and a half kilometers
-ar = بعد كيلومتر ونصف
+ar = بعد كيلو ونص
 be = Праз паўтара кіламетра
 bg = След километър и половина
 ca = A un quilòmetre i mig
@@ -1633,7 +1633,7 @@ yue = 喺兩公里後
 
 [in_2_5_kilometers]
 en = In two and a half kilometers
-ar = بعد كيلومترين ونصف
+ar = بعد كيلومترين ونص
 be = Праз два з паловай кіламетры
 bg = След два километра и половина
 ca = A dos quilòmetres i mig
@@ -1683,7 +1683,7 @@ yue = 喺兩點五公里後
 
 [in_3_kilometers]
 en = In three kilometers
-ar = بعد ثلاثة كيلومترات
+ar = بعد تلاتة كيلومتر
 be = Праз тры кіламетры
 bg = След три километра
 ca = A tres quilòmetres
@@ -1733,7 +1733,7 @@ yue = 喺三公里後
 
 [then]
 en = Then
-ar = ثم
+ar = بعدين
 be = Потым
 bg = След
 ca = Després
@@ -1797,7 +1797,7 @@ yue = %1$s%2$s%3$s%4$s
 
 [take_the_1_exit]
 en = Take the first exit.
-ar = اسلك المخرج الأول.
+ar = خود أول مخرج.
 be = Збочце на першы з'езд.
 bg = Вземете първия изход.
 ca = Agafeu la primera sortida.
@@ -1859,7 +1859,7 @@ nl = Neem
 
 [take_the_2_exit]
 en = Take the second exit.
-ar = اسلك المخرج الثاني.
+ar = خود تاني مخرج.
 be = Збочце на другі з'езд.
 bg = Вземете втория изход.
 ca = Agafeu la segona sortida.
@@ -1921,7 +1921,7 @@ nl = Neem
 
 [take_the_3_exit]
 en = Take the third exit.
-ar = اسلك المخرج الثالث.
+ar = خود تالت مخرج.
 be = Збочце на трэці з'езд.
 bg = Вземете третия изход.
 ca = Agafeu la tercera sortida.
@@ -1983,7 +1983,7 @@ nl = Neem
 
 [take_the_4_exit]
 en = Take the fourth exit.
-ar = اسلك المخرج الرابع.
+ar = خود رابع مخرج.
 be = Збочце на чацвёрты з'езд.
 bg = Вземете четвъртия изход.
 ca = Agafeu la quarta sortida.
@@ -2045,7 +2045,7 @@ nl = Neem
 
 [take_the_5_exit]
 en = Take the fifth exit.
-ar = اسلك المخرج الخامس.
+ar = خود خامس مخرج.
 be = Збочце на пяты з'езд.
 bg = Вземете петия изход.
 ca = Agafeu la cinquena sortida.
@@ -2107,7 +2107,7 @@ nl = Neem
 
 [take_the_6_exit]
 en = Take the sixth exit.
-ar = اسلك المخرج السادس.
+ar = خود سادس مخرج.
 be = Збочце на шосты з'езд.
 bg = Вземете шестия изход.
 ca = Agafeu la sisena sortida.
@@ -2169,7 +2169,7 @@ nl = Neem
 
 [take_the_7_exit]
 en = Take the seventh exit.
-ar = اسلك المخرج السابع.
+ar = خود سابع مخرج.
 be = Збочце на сёмы з'езд.
 bg = Вземете седмия изход.
 ca = Agafeu la setena sortida.
@@ -2231,7 +2231,7 @@ nl = Neem
 
 [take_the_8_exit]
 en = Take the eighth exit.
-ar = اسلك المخرج الثامن.
+ar = خود تامن مخرج.
 be = Збочце на восьмы з'езд.
 bg = Вземете осмия изход.
 ca = Agafeu la vuitena sortida.
@@ -2293,7 +2293,7 @@ nl = Neem
 
 [take_the_9_exit]
 en = Take the ninth exit.
-ar = اسلك المخرج التاسع.
+ar = خود تاسع مخرج.
 be = Збочце на дзявяты з'езд.
 bg = Вземете деветия изход.
 ca = Agafeu la novena sortida.
@@ -2355,7 +2355,7 @@ nl = Neem
 
 [take_the_10_exit]
 en = Take the tenth exit.
-ar = اسلك المخرج العاشر.
+ar = خود عاشر مخرج.
 be = Збочце на дзясяты з'езд.
 bg = Вземете десетия изход.
 ca = Agafeu la desena sortida.
@@ -2417,7 +2417,7 @@ nl = Neem
 
 [take_the_11_exit]
 en = Take the eleventh exit.
-ar = اسلك المَخْرَج الحادي عشر.
+ar = خود المخرج الحادي عشر.
 be = Збочце на адзінаццаты з'езд.
 bg = Вземете единадесетия изход.
 ca = Agafeu la onzena sortida.
@@ -3579,7 +3579,7 @@ yue = 喺兩英里後
 
 [unknown_camera]
 en = Camera ahead
-ar = الكاميرا أمامك
+ar = كاميرا قدامك
 be = Наперадзе камера
 bg = Камера отпред
 ca = Càmera al davant

@@ -547,6 +547,9 @@
     <string name="editor_share_to_all_dialog_message_1">Make sure you did not enter any private or personal data.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap editors will check the changes and contact you if they have any questions.</string>
     <string name="navigation_stop_button">Stop</string>
+    <!-- Dalil: accessibility for modern navigation guidance card -->
+    <string name="navigation_next_turn">Next turn</string>
+    <string name="navigation_current_street">Current street</string>
     <!-- Shown as toast when starting the recent track recording -->
     <string name="track_recording">Recording the track</string>
     <!-- For the first routing -->
